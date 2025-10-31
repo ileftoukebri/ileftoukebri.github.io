@@ -1,0 +1,478 @@
+/* -------- Base Styles -------- */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@700&display=swap');
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #6c1325;
+  background-image: url('flowerrps.jpg'); /* main page background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* -------- Navigation -------- */
+nav {
+  position: absolute;
+  top: 30px;
+  left: 50px; /* upper-left */
+  z-index: 20;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a,
+nav a:visited {
+  color: #6c1325;  /* same as portfolio/Ilef Toukebri */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #e69292;  /* soft pink hover */
+  outline: none;
+}
+
+nav a {
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+/* -------- Main Page Centered Portfolio -------- */
+header {
+  height: 100vh;                  /* full screen */
+  display: flex;
+  justify-content: center;         /* center horizontally */
+  align-items: center;             /* center vertically */
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.portfolio-wrapper {
+  position: relative;
+  display: inline-block;           /* wraps around the text */
+  text-align: center;              /* centers the title itself */
+}
+
+/* Portfolio title */
+.portfolio-wrapper h1 {
+  font-size: 65px;
+  color: #6c1325;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Author name at bottom-right of Portfolio */
+.portfolio-wrapper .author {
+  position: absolute;
+  bottom: -15px;   /* space below Portfolio */
+  right: 0;        /* aligns to the right edge of Portfolio */
+  font-size: 22px;
+  color: #6c1325;
+  font-weight: 400; /* not bold */
+  letter-spacing: 0.5px;
+  font-family: "Inter", sans-serif;
+}
+
+/* -------- About Page -------- */
+body.about-page {
+  background-image: none;      /* remove flowers */
+  background-color: #f1eeb6;   /* pastel pink */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #6c1325;
+}
+
+/* Header for About page */
+body.about-page header {
+  height: auto;        /* remove full-screen height */
+  padding-top: 60px;   /* bring title closer to top */
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+body.about-page header h1 {
+  font-size: 48px;
+  margin-bottom: 10px; /* small space before image */
+  color: #6c1325;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* Main content for About page */
+body.about-page main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+  padding: 0 20px 80px;
+}
+
+/* About page image */
+body.about-page img {
+  width: 150px;        /* ID-photo size */
+  height: auto;
+  display: block;
+  margin: 10px auto;   /* small spacing around image */
+  border-radius: 0;    /* rectangular */
+  box-shadow: none;    /* no shadow */
+  cursor: default;     /* not clickable */
+  pointer-events: none; /* disables pop-up */
+  object-fit: contain; /* keeps original rectangle shape */
+}
+
+/* About page text */
+body.about-page p {
+  max-width: 700px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #6c1325;
+  font-weight: 400;
+  margin-top: 10px;   /* space below image */
+}
+/* Header styling */
+body.about-page header {
+  position: relative;
+  display: flex;
+  justify-content: center;    /* centers the About Me title */
+  align-items: center;        /* vertically aligns items */
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* Back arrow on extreme left */
+body.about-page .back-arrow {
+  position: absolute;
+  left: 20px;               /* distance from the left edge */
+  font-size: 48px;
+  color: #6c1325;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.about-page .back-arrow:hover {
+  color: #c22e4c;
+}
+
+/* About Me title stays centered */
+body.about-page header h1 {
+  font-size: 48px;
+  color: #6c1325;
+  margin: 0;
+  text-align: center;
+}
+
+/* About page body */
+body.about-page {
+  background-color: #f7e6ad; /* pastel pink */
+  background-image: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: #6c1325;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;           /* full viewport height */
+  justify-content: center;  /* vertical centering */
+  align-items: center;      /* horizontal centering */
+  text-align: center;
+  position: relative;
+}
+
+/* Back arrow */
+body.about-page .back-arrow {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 48px;
+  color: #6c1325;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.about-page .back-arrow:hover {
+  color: #c22e4c;
+}
+
+/* About content */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+.about-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* Image */
+.about-content img {
+  width: 150px;     /* small ID-like size */
+  height: auto;
+  border-radius: 0; /* rectangle */
+  margin-bottom: 25px;
+  pointer-events: none; /* not clickable */
+  cursor: default;
+}
+
+/* Paragraphs */
+.about-content p {
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px; /* space between paragraphs */
+}
+/* Projects page body */
+body.projects-page {
+  background-color: #d2a0ae;  /* soft pastel background for projects */
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: #6c1325;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Back arrow */
+body.projects-page .back-arrow {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 48px;
+  color: #6c1325;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.projects-page .back-arrow:hover {
+  color: #c22e4c;
+}
+
+/* Header */
+body.projects-page header {
+  padding-top: 60px;
+  text-align: center;
+}
+
+body.projects-page header h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+/* Main content grid */
+.projects-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 60px;
+  justify-items: center;
+}
+
+/* Individual project cards */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* rectangle image */
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: none;
+}
+
+.project-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 300px;
+}
+/* --- Projects Page Background --- */
+body.projects-page {
+  background-color: #ecb4c3; /* same pastel pink as About Me */
+  background-image: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: #6c1325;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+//* --- Projects Page Background --- */
+body.projects-page {
+  background-color: #f7b4bd; /* pastel pink like About Me */
+  background-image: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: #6c1325;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* --- Header --- */
+body.projects-page header {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0; /* smaller top padding */
+  margin: 0;
+}
+
+/* --- Page Title --- */
+body.projects-page header h1 {
+  font-size: 48px;
+  color: #6c1325;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0; /* remove extra spacing */
+}
+
+/* --- Main content starts right below header --- */
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* space between projects */
+  margin-top: 20px; /* small gap from header */
+  width: 100%;
+  padding: 0 20px;
+}
+body.contact-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: #6c1325;
+  background: url("flowerrps.jpg") center/cover no-repeat fixed;
+  backdrop-filter: blur(8px);
+  text-align: center;
+  height: 100vh;
+}
+
+/* -------- CONTACT PAGE -------- */
+
+body.contact-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: #6c1325;
+  background: url("flowerrps.jpg") center/cover no-repeat fixed;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  height: 100vh; /* ensures it fits exactly one screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --- Back Arrow --- */
+.back-arrow {
+  position: absolute;
+  left: 30px;
+  top: 40px;
+  font-size: 28px;
+  color: #6c1325;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.back-arrow:hover {
+  opacity: 0.6;
+}
+
+/* --- Header --- */
+body.contact-page header {
+  margin-top: 50px;
+  margin-bottom: 5px; /* smaller gap between title and text */
+}
+
+body.contact-page header h1 {
+  font-size: 48px;
+  color: #6c1325;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* --- Main Section --- */
+body.contact-page main {
+  margin-top: 5px; /* closer to Contact */
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px; /* smaller spacing between each line */
+  line-height: 1.5;
+  font-size: 16px;
+  color: #3f0b13;
+}
+
+/* --- Text styling --- */
+body.contact-page main p {
+  margin: 0;
+}
+
+body.contact-page main p:first-of-type {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* --- Links --- */
+body.contact-page a {
+  color: #6c1325;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+body.contact-page a:hover {
+  opacity: 0.7;
+}
