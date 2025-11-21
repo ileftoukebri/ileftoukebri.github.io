@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,54 +9,67 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#about-section">About Me</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="#contact-section">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Home Button -->
 
-  <!-- Portfolio Header -->
+<a href="#home" class="home-dot"></a>
+
+ <!-- Navigation -->
+<nav>
+  <a href="#home" class="home-dot">⌂</a>
+  <ul>
+    <li><a href="#about-section">About Me</a></li>
+   <li><a href="projects.html">Work</a></li>
+
+    <li><a href="#contact-section">Contact</a></li>
+  </ul>
+</nav>
+
+
+
+<!-- HOME SECTION -->
+
+<section id="home">
   <header>
     <div class="portfolio-wrapper">
       <h1>PORT-<br>FOLIO</h1>
       <div class="author">Ilef Toukebri</div>
     </div>
   </header>
+</section>
 
-  <!-- About Me Section -->
-  <section id="about-section" class="about-wrapper">
-    <div class="about-title">About Me</div>
-    <div class="about-container">
-      <img src="aboutmepic.png" alt="Ilef Toukebri">
-      <div class="about-text">
-        <p>
-          From Tunisia to Budapest, and from numbers to design, I followed my heart. 
-          An art-oriented soul with roots that nurture my visual language to transform stories, memories, and emotions into tangibility.
-        </p>
-        <p>
-          Trained in product design, but an artist at heart, my work bridges the worlds of functional design and creative expression. 
-          I see beauty in the simple things, in everyday moments, objects, and emotions. 
-          My practice moves across disciplines—product design, multidisciplinary art, and visual storytelling—always guided by curiosity, color, and a sense of creativity.
-        </p>
-      </div>
+<!-- About Me Section -->
+
+<section id="about-section" class="about-wrapper">
+  <div class="about-title">About Me</div>
+  <div class="about-container">
+    <img src="aboutmepic.png" alt="Ilef Toukebri">
+    <div class="about-text">
+      <p>
+        From Tunisia to Budapest, and from numbers to design, I followed my heart.
+        An art-oriented soul with roots that nurture my visual language to transform stories, memories, and emotions into tangibility.
+      </p>
+      <p>
+        Trained in product design, but an artist at heart, my work bridges the worlds of functional design and creative expression.
+        I see beauty in the simple things, in everyday moments, objects, and emotions.
+        My practice moves across disciplines—product design, multidisciplinary art, and visual storytelling—always guided by curiosity, color, and a sense of creativity.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact-section" class="contact-wrapper">
-    <div class="contact-title">Let’s connect !</div>
-    <div class="contact-info">
-      <p>Whether it’s a question, feedback, or you just want to say hi. I’d love to hear from you!</p>
-      <p>Email: <a href="mailto:ilef@example.com">ilef@example.com</a></p>
-      <p>Behance: <a href="https://www.behance.net/ilef">Behance</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/ilef">Instagram</a></p>
-    </div>
-  </section>
+<!-- Contact Section -->
 
-  <script>
+<section id="contact-section" class="contact-wrapper">
+  <div class="contact-title">Let’s connect !</div>
+  <div class="contact-info">
+    <p>Whether it’s a question, feedback, or you just want to say hi. I’d love to hear from you!</p>
+    <p>Email: <a href="ileftoukebri571@gmail.com">hi.ilef@gmail.com</a></p>
+    
+    <p>Instagram: <a href="https://www.instagram.com/ilef_tkb/?hl=fr">me.oninstagram</a></p>
+  </div>
+</section>
+
+<script>
 const aboutSection = document.getElementById("about-section");
 const contactSection = document.getElementById("contact-section");
 
@@ -72,7 +86,6 @@ window.addEventListener("scroll", () => {
   }
 });
 </script>
-
 
 </body>
 </html>
