@@ -25,10 +25,11 @@ body::before {
     transition: opacity 0.8s ease, filter 0.8s ease;
 }
 
-/* ---------- STATES ---------- */
+/* ---------- States ---------- */
 body.bg-plain::before {
-    opacity: 0;
-    filter: blur(0px);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 body.bg-contact::before {
@@ -36,7 +37,7 @@ body.bg-contact::before {
     filter: blur(10px);
 }
 
-/* ---------- NAVIGATION ---------- */
+/* ---------- Navigation ---------- */
 nav {
     position: fixed;
     top: 30px;
@@ -44,35 +45,27 @@ nav {
     z-index: 10;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* spacing between home icon and links */
-    align-items: flex-start; /* align all items to the left */
+    gap: 30px;
+    align-items: flex-start;
 }
 
-/* Home Icon (⌂) */
 .home-dot {
-    position: relative;  /* inside nav column */
-    font-size: 22px;     /* size of ⌂ */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 24px;
+    transition: transform 0.25s ease;
     cursor: pointer;
-    transition: transform 0.25s ease, color 0.25s ease;
-    color: #6c1325;
 }
 
 .home-dot:hover {
     transform: scale(1.5);
-    color: #555;
 }
 
-/* Nav Links */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* vertical links */
-    gap: 30px; /* spacing between links */
+    flex-direction: column;
+    gap: 30px;
 }
 
 nav a {
@@ -92,7 +85,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ---------- PORTFOLIO HEADER ---------- */
+/* ---------- Portfolio Header ---------- */
 header {
     height: 100vh;
     display: flex;
@@ -111,7 +104,7 @@ header {
     margin-top: 10px;
 }
 
-/* ---------- ABOUT SECTION ---------- */
+/* ---------- About Section ---------- */
 .about-wrapper {
     min-height: 90vh;
     display: flex;
@@ -149,7 +142,7 @@ header {
     line-height: 1.6;
 }
 
-/* ---------- CONTACT SECTION ---------- */
+/* ---------- Contact Section ---------- */
 .contact-wrapper {
     min-height: 80vh;
     padding: 60px 20px;
@@ -179,310 +172,254 @@ header {
     opacity: 0.7;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- Responsive ---------- */
 @media (max-width: 700px) {
     .about-container {
         flex-direction: column;
         text-align: center;
     }
-
-    .about-text {
+  .about-text {
         text-align: center;
     }
 }
-/* ---------- Base Styles ---------- */
-body {
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #6c1325;
-    text-align: center;
-    background-color: #f7e6ad;
+
+/* ---------- Projects Page: Work Section ---------- */
+.projects-page .work-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('metal\ workshop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* overlay at bottom */
+    padding-bottom: 80px;
 }
 
-/* Global Flower Background */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
+.work-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background:none
+    padding 30px 40px;
+    border-radius: 16px;
+    color: #6c1325;
+    max-width: 600px; }
+
+/* ---------- Projects Section Plain Background ---------- */
+.projects-wrapper {
+    position: relative;
+    z-index: 5;
+    background-color: #f7e6ad;
+    padding: 60px 40px;
+    min-height: 100vh;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    text-align: left;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ---------- Project Fullscreen Images ---------- */
+.project-fullscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.project-fullscreen img {
     width: 100%;
     height: 100%;
-    background: url('flowerrps.jpg') center/cover no-repeat fixed;
-    opacity: 1;
-    filter: blur(0px);
-    z-index: -1;
-    transition: opacity 0.8s ease, filter 0.8s ease;
+    object-fit: cover;
 }
 
-/* ---------- States ---------- */
-body.bg-plain::before {
-    opacity: 0;
-    filter: blur(0px);
-}
-
-body.bg-contact::before {
-    opacity: 1;
-    filter: blur(10px);
-}
-
-/* ---------- Navigation ---------- */
-nav {
-    position: fixed;
-    top: 30px;
-    left: 30px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.home-dot {
-    font-size: 24px;
-    transition: transform 0.25s ease;
-    cursor: pointer;
-}
-
-.home-dot:hover {
-    transform: scale(1.5);
-}
-
-/* Nav Links */
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #6c1325;
-    font-size: 18px;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: #e69292;
-}
-
-/* Smooth scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ---------- Coming Soon Fullscreen ---------- */
-.coming-soon-wrapper {
-    height: 100vh; /* full screen height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Text overlay directly on image */
+.project-text-overlay {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    padding: 0 20px;
+    color: #6c1325;
+    max-width: 90%;
+}
+.projects-page .work-section .work-overlay h2 {
+  font-size: 80px;          /* adjust if needed */
+  max-width: 95vw;          /* allow almost full viewport width */
+  margin: 0 auto;           /* center the text */
+  line-height: 1.1;         /* tight line spacing */
+  word-break: normal;       /* prevent breaking mid-word */
+  white-space: normal;      /* allow wrapping only naturally */
 }
 
-.coming-soon-text h1 {
-    font-size: 80px; /* big like portfolio home header */
-    font-weight: 700;
-    line-height: 1.1;
+/* Responsive */
+@media (max-width: 800px) {
+    .project-text-overlay h2 {
+        font-size: 36px;
+    }
+    .project-text-overlay p {
+        font-size: 16px;
+    }
+}
+
+/* Project Description (Plain Section Between Images) */
+.project-description {
+    background-color: #f7e6ad;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.project-description h2 {
+    font-size: 48px;
     margin-bottom: 20px;
     color: #6c1325;
 }
 
-.coming-soon-text p {
-    font-size: 24px;
-    line-height: 1.5;
-    color: #6c1325;
-}
-
-/* ---------- Projects Flexbox ---------- */
-.projects-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px auto;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    width: 100%;
-}
-
-.project-card {
-    background-color: transparent; /* removed white background */
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    flex: 1 1 45%;
-    max-width: 500px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    object-fit: cover;
-}
-
-.project-card h2 {
+.project-description p {
     font-size: 20px;
-    margin-bottom: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Project Links on Projects Page */
+.project-links {
+    text-align: center;
+    margin: 100px 0;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.project-link {
+    font-size: 32px;
+    font-weight: 700;
+    color: #6c1325;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    border-bottom: 2px solid #6c1325;
+    transform: scale(1.05);
+}
+
+/* ---------- Plain sections for projects like Threadplay ---------- */
+.embroidery-plain-section {
+    background-color: #f7e6ad;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.embroidery-plain-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
     color: #6c1325;
 }
 
-.project-card p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #6c1325;
+.embroidery-plain-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 700px) {
-    .coming-soon-text h1 {
-        font-size: 48px;
-    }
-    .coming-soon-text p {
-        font-size: 18px;
-    }
-    .project-card {
-        flex: 1 1 100%;
-    }
-}
-/* Apply blurry flower background only for projects page */
-body.projects-page::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Side-by-side layout for 2 images */
+.embroidery-side-by-side {
+    display: flex;
     width: 100%;
-    height: 100%;
-    background: url('flowerrps.jpg') center/cover no-repeat fixed;
-    opacity: 1;
-    filter: blur(10px); /* blurry background */
-    z-index: -1;
-    transition: opacity 0.8s ease, filter 0.8s ease;
-}
-.project-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* makes the image square */
-    border-radius: 10px;
-    margin-bottom: 15px;
-    object-fit: cover; /* keeps image proportion while filling square */
+    height: 100vh;
 }
 
-
-
-
-
-
-
-
-/* ---------- Fullscreen Embroidery Image ---------- */
-.embroidery-fullscreen {
-    height: 100vh; /* full screen */
-    width: 100%;
-    position: relative;
+.side-img {
+    flex: 1;
     overflow: hidden;
 }
 
-.embroidery-fullscreen img {
+.side-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* covers entire screen */
-}
-
-/* Text overlay at the bottom of the image */
-.fullscreen-text-bottom {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.fullscreen-text-bottom h1 {
-    font-size: 60px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #f7e6ad; /* text color */
-}
-
-.fullscreen-text-bottom p {
-    font-size: 22px;
-    line-height: 1.5;
-    color: #f7e6ad; /* text color */
-}
-
-/* ---------- Gallery Flexbox ---------- */
-.embroidery-gallery {
-    display: flex;
-    justify-content: center;
-    margin: 50px auto;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-.gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.gallery-item {
-    flex: 1 1 300px;
-    max-width: 400px;
-}
-
-.gallery-item img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 10px;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 700px) {
-    .fullscreen-text-bottom h1 {
-        font-size: 36px;
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+    .embroidery-side-by-side {
+        flex-direction: column;
+        height: auto;
     }
-    .fullscreen-text-bottom p {
-        font-size: 16px;
-    }
-    .gallery-item {
-        flex: 1 1 100%;
-        max-width: 100%;
+
+    .side-img {
+        height: 50vh;
     }
 }
-
-/* ---------- Blurry background for projects page ---------- */
-body.projects-page::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('flowerrps.jpg') center/cover no-repeat fixed;
-    opacity: 1;
-    filter: blur(10px);
-    z-index: -1;
-    transition: opacity 0.8s ease, filter 0.8s ease;
+.work-overlay h2 {
+  font-size: 80px;       /* or adjust slightly smaller/larger */
+  max-width: 900px;      /* restrict width so it wraps at 1-2 lines */
+  margin: 0 auto;        /* center it */
+  line-height: 1.1;      /* keep lines tight */
+}
+.project-links a {
+  font-weight: 700;
+  color: #6c1325;        /* default color */
+  text-decoration: none !important; /* force remove underline */
+  transition: color 0.3s;
 }
 
+.project-links a:hover {
+  color: #e69292;        /* hover color */
+  text-decoration: none !important; /* make sure underline stays gone */
+}
+.project-links {
+  display: flex;
+  gap: 50px;              /* keeps space between SWAY and THREADPLAY */
+  justify-content: center;
+  margin-top: 5px;        /* smaller margin to move it closer to the paragraph */
+}
+
+.project-links a {
+  font-weight: 700;
+  color: #6c1325;
+  text-decoration: none !important;
+  transition: color 0.3s;
+}
+
+.project-links a:hover {
+  color: #e69292;
+}
+.project-links a {
+  font-weight: 700;
+  color: #6c1325;
+  text-decoration: none !important;
+  transition: color 0.3s;
+  font-size: 20px; /* adjust this to make SWAY/THREADPLAY bigger or smaller */
+}
+
+.project-links a:hover {
+  color: #e69292;
+}
+.work-overlay h2 {
+  font-size: 100px; /* adjust bigger or smaller */
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0 0 45px 0; /* bottom margin controls spacing below */
+  text-align: center;
+}
